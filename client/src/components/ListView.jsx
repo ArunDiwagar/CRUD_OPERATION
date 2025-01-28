@@ -85,10 +85,9 @@ const ListView = () => {
   return (
     <div className="list-view">
       <aside className="sidebar">
-        <h2>Deleted Entities</h2>
-        <button onClick={() => setShowDeleted(!showDeleted)}>
-          {showDeleted ? "Hide Deleted" : "Show Deleted"}
-        </button>
+        <h2>Deleted List</h2>
+     <button> <Link to="/deleted">Deleted Entities</Link></button>   {/* Add a route for DeletedEntities */}
+     
       </aside>
 
       <main className="content">
@@ -96,11 +95,11 @@ const ListView = () => {
 
         <div className="controls">
           <input type="text" placeholder="Search..." value={search} onChange={handleSearch} />
-          <Link to="/add">
-            <button className="add-btn">
-              <FontAwesomeIcon icon={faPlus} /> Add Entity
-            </button>
-          </Link>
+         
+            <button className="add-btn"><Link to="/add">
+              <FontAwesomeIcon icon={faPlus} />  Add Entity
+          </Link>  </button>
+        
           <button onClick={handleExportToExcel} className="export-btn">
             <FontAwesomeIcon icon={faFileExport} /> Export to Excel
           </button>

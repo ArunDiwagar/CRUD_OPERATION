@@ -25,7 +25,7 @@ const EditView = () => {
     if (id) {
       // Fetch entity data to edit
       axios
-        .get(`http://localhost:5000/api/entities/${id}`)
+        .get(`http://localhost:3000/api/entities/${id}`)
         .then((res) => {
           setFormData(res.data);
           setInitialData(res.data); // Save initial data for reset

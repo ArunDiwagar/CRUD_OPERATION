@@ -1,129 +1,189 @@
-:root {
-  --primary: #007bff;
-  --danger: #dc3545;
-  --success: #28a745;
-  --bg: #f4f6f8;
-  --white: #fff;
-  --border: #ddd;
-  --font: "Poppins", sans-serif;
-}
+/* ListView.css */
 
 body {
-  font-family: var(--font);
-  background: var(--bg);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.list-container {
-  max-width: 900px;
-  margin: auto;
-  background: var(--white);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.list-view {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
-h2 {
-  text-align: center;
-  color: var(--primary);
-}
-
-.add-btn {
-  background: var(--success);
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
   color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.sidebar button {
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
+  background-color: #495057;
   border: none;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 4px;
+  color: white;
   cursor: pointer;
-  margin-bottom: 15px;
-  transition: 0.3s;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+ 
+}
+.sidebar button a{
+  text-decoration: none;
+
+  color: white;
 }
 
-.add-btn:hover {
-  background: #218838;
+.sidebar button:hover {
+  background-color: #adb5bd;
 }
 
-.table-responsive {
-  overflow-x: auto;
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 20px;
 }
 
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.controls .add-btn,
+.controls .export-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: white;
+  background: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.controls .add-btn a {
+  text-decoration: none;
+  color: white;
+}
+.controls .add-btn:hover,
+.controls .export-btn:hover {
+  background: #2980b9;
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--white);
+  margin-bottom: 20px;
+  background-color: white;
 }
 
-th, td {
-  padding: 12px;
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
   text-align: left;
-  border-bottom: 1px solid var(--border);
 }
 
-th {
-  background: var(--primary);
-  color: white;
-}
-
-.status-active {
-  color: var(--success);
+table th {
+  background-color: #f1f1f1;
   font-weight: bold;
 }
 
-.status-inactive {
-  color: var(--danger);
-  font-weight: bold;
+table tr:hover {
+  background-color: #f8f9fa;
 }
 
-.edit-btn {
-  background: var(--primary);
-  color: white;
-  padding: 6px 10px;
+.edit-btn,
+.delete-btn {
   border: none;
-  border-radius: 5px;
-  margin-right: 5px;
+  background: none;
   cursor: pointer;
-  transition: 0.3s;
+  color: #495057;
+  font-size: 16px;
 }
 
 .edit-btn:hover {
-  background: #0056b3;
-}
-
-.delete-btn {
-  background: var(--danger);
-  color: white;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+  color: #007bff;
 }
 
 .delete-btn:hover {
-  background: #c82333;
+  color: #dc3545;
 }
 
-.no-data {
-  text-align: center;
-  font-size: 16px;
-  padding: 20px;
-  color: #888;
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-  .list-container {
-    padding: 15px;
-  }
+.pagination button {
+  padding: 8px 12px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  table {
-    font-size: 14px;
-  }
+.pagination button:disabled {
+  background-color: #ced4da;
+  cursor: not-allowed;
+}
 
-  .add-btn, .edit-btn, .delete-btn {
-    font-size: 12px;
-    padding: 6px;
-  }
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Bulk Actions */
+.bulk-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.bulk-actions button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: white;
+  background: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bulk-actions button:hover {
+  background: #2980b9;
 }

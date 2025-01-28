@@ -8,11 +8,7 @@ import DeletedEntities from './components/DeleteEntities';
 const App = () => {
   return (
     <Router>
-      <nav>
-        
-     
-        <Link to="/deleted">Deleted Entities</Link> {/* Add a route for DeletedEntities */}
-      </nav>
+ 
       <Routes>
         <Route path="/" element={<ListView />} />
         <Route path="/add" element={<EditView />} />

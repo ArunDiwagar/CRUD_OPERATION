@@ -11,7 +11,7 @@ const DeletedEntities = () => {
 
   const fetchDeletedEntities = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/entities?showDeleted=true');
+      const response = await axios.get('http://localhost:3000/api/entities?showDeleted=true');
       setDeletedEntities(response.data.entities);
     } catch (error) {
       console.error('Error fetching deleted entities:', error);
@@ -20,7 +20,7 @@ const DeletedEntities = () => {
 
   const restoreEntity = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/entities/${id}/restore`);
+      await axios.put(`http://localhost:3000/api/entities/${id}/restore`);
       fetchDeletedEntities();
     } catch (error) {
       console.error('Error restoring entity:', error);
@@ -32,7 +32,7 @@ const DeletedEntities = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/entities/${id}/permanent`);
+      await axios.delete(`http://localhost:3000/api/entities/${id}/permanent`);
       fetchDeletedEntities();
     } catch (error) {
       console.error('Error deleting entity permanently:', error);

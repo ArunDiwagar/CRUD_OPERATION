@@ -1,28 +1,60 @@
-.edit-container {
-  max-width: 400px;
-  margin: auto;
+.edit-view {
+  max-width: 600px;
+  margin: 50px auto;
   padding: 20px;
-  background: var(--white);
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.edit-view h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-input, select, button {
-  width: 100%;
-  margin: 8px 0;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form select {
   padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-button {
-  background: var(--primary);
+form select {
+  background: white;
+}
+
+form .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+form button {
+  background: #3498db;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
-button:hover {
-  background: #0056b3;
+form button:hover {
+  background: #2980b9;
+}
+
+.reset-btn {
+  background: #e74c3c;
+}
+
+.reset-btn:hover {
+  background: #c0392b;
 }
