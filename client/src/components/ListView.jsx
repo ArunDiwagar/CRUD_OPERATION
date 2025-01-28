@@ -48,15 +48,16 @@ const ListView = () => {
     }
   };
 
-  const handleExportToExcel = async () => {
-    try {
-      await dispatch(exportToExcel()).unwrap();
-      alert("✅ Export successful");
-    } catch (error) {
-      console.error("❌ Export failed:", error.message);
-      alert("Export failed");
-    }
-  };
+ 
+const handleExportToExcel = async () => {
+  try {
+    await dispatch(exportToExcel()).unwrap();
+    alert("✅ Export successful");
+  } catch (error) {
+    console.error(" Export failed:", error.message);
+    alert(" Export failed");
+  }
+};
 
   const handleBulkAction = (action) => {
     if (selectedIds.length === 0) {
@@ -101,8 +102,8 @@ const ListView = () => {
           </Link>  </button>
         
           <button onClick={handleExportToExcel} className="export-btn">
-            <FontAwesomeIcon icon={faFileExport} /> Export to Excel
-          </button>
+    <FontAwesomeIcon icon={faFileExport} /> Export to Excel
+  </button>
         </div>
 
         {status === "loading" && <p>Loading...</p>}
