@@ -140,11 +140,11 @@ const ListView = () => {
                 <td>{new Date(entity.createdDate).toLocaleString()}</td>
                 <td>{entity.status}</td>
                 <td>
-                  <Link to={`/edit/${entity._id}`}>
+                
                     <button className="edit-btn">
-                      <FontAwesomeIcon icon={faEdit} />
+                    <Link to={`/edit/${entity._id}`}>  <FontAwesomeIcon icon={faEdit} />  </Link>
                     </button>
-                  </Link>
+                
                   <button className="delete-btn" onClick={() => handleDelete(entity._id)}>
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
